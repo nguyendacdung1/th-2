@@ -24,8 +24,10 @@ public class EmployeeController extends BaseController{
 
         return "create";
     }
-
-    @RequestMapping(method = RequestMethod.POST, value = "/create")
+    @GetMapping(value = "/create")
+    public String createEmployee() {
+        return "index";
+    }
     @PostMapping(value = "/create")
     public String createEmployee(@ModelAttribute Employee employee) {
         employeeService.createEmployee(employee);
